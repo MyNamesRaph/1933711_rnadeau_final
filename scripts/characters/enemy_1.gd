@@ -33,4 +33,4 @@ func _on_Timer_timeout():
 		var b = bullet.instance()
 		b.create(bulletOut.global_position, rotation)
 		get_parent().add_child(b)
-		b.rotation = rotation+90
+		b.rotation_degrees = rotation_degrees+90
