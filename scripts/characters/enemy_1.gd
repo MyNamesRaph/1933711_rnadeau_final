@@ -28,13 +28,9 @@ func _physics_process(delta):
 		
 	var collision = move_and_collide(velocity*delta)
 	
-	
-	
-	
-
-
 func _on_Timer_timeout():
 	if shooting :
 		var b = bullet.instance()
 		b.create(bulletOut.global_position, rotation)
 		get_parent().add_child(b)
+		b.rotation = rotation+90

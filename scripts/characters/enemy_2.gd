@@ -28,11 +28,6 @@ func _physics_process(delta):
 		
 	var collision = move_and_collide(velocity*delta)
 	
-	
-	
-	
-
-
 func _on_Timer_timeout():
 	if shooting :
 		var b = bullet.instance()

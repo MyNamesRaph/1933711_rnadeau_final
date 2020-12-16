@@ -3,7 +3,8 @@
 [ext_resource path="res://assets/textures/background/menu.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/menu/Button_Quit.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/menu/Button_Play.png" type="Texture" id=3]
-[ext_resource path="res://scripts/menu.gd" type="Script" id=4]
+[ext_resource path="res://scripts/GUI/menu.gd" type="Script" id=4]
+
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;

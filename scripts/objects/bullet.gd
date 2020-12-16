@@ -6,6 +6,7 @@ onready var texture = $Bullet
 onready var timer = $Timer
 var isDead = false
 var fadeOut = 1.0
+export var damage = 0 #percentage
 export var isPlayerBullet = false
 
 func create(pos, dir) :
