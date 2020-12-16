@@ -7,7 +7,7 @@ export(PackedScene) var bullet
 onready var bulletOut = $BulletOut
 
 func _ready():
-	add_to_group("ship")
+	add_to_group("player")
 
 func _physics_process(delta):
 	var x = velocity.x
@@ -66,3 +66,6 @@ func get_input():
 		b.create(bulletOut.global_position, rotation)
 		get_parent().add_child(b)
 	
+func hurt(damage):
+	damage = float(damage)
+	get_parent().hurtPlayer(damage)

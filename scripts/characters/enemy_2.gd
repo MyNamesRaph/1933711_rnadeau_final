@@ -12,21 +12,23 @@ func _ready():
 
 func _physics_process(delta):
 	shooting = false;
-	var playerpos = get_parent().get_parent().get_parent().get_node("player").position - global_position
-	rotation = playerpos.angle()
-	
-	var distance = sqrt(pow((position.x - playerpos.x),2) + pow((position.y - playerpos.y),2))
+	var player = get_parent().get_parent().get_parent().get_node("player")
+	if player != null:
+		var playerpos = player.position - global_position
+		rotation = playerpos.angle()
 		
-	if distance < 1500 :
-		
-		shooting = true
-		if distance > 300 :
-			velocity = Vector2(speed, 0).rotated(rotation)
-		else :
-			velocity = Vector2(0, 0)
-		
-		
-	var collision = move_and_collide(velocity*delta)
+		var distance = sqrt(pow((position.x - playerpos.x),2) + pow((position.y - playerpos.y),2))
+			
+		if distance < 1500 : 
+			
+			shooting = true
+			if distance > 300 :
+				velocity = Vector2(speed, 0).rotated(rotation)
+			else :
+				velocity = Vector2(0, 0)
+			
+			
+		var collision = move_and_collide(velocity*delta)
 	
 func _on_Timer_timeout():
 	if shooting :

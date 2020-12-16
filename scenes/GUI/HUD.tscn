@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fonts/kenney.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/GUI/menu.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/kenneyBig.tres" type="DynamicFont" id=3]
+
+[node name="HUD" type="Node2D"]
+z_index = 1932
+script = ExtResource( 2 )
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = 7.41626
+margin_top = 7.41624
+margin_right = 496.416
+margin_bottom = 146.416
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Health: 100
+Level: 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 15.0
+margin_top = 473.0
+margin_right = 1015.0
+margin_bottom = 597.0
+custom_fonts/normal_font = ExtResource( 3 )
+text = "GAME OVER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="GameOver"]
+margin_left = 635.371
+margin_top = -2.98816
+margin_right = 983.371
+margin_bottom = 111.012
+custom_fonts/font = ExtResource( 1 )
+text = "RESTART"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="GameOver/Restart" to="." method="_on_Restart_pressed"]

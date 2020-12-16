@@ -26,6 +26,8 @@ func _physics_process(delta):
 		if isPlayerBullet :
 			if collision.collider.is_in_group("enemy") :
 				collision.collider.queue_free()
+		elif collision.collider.is_in_group("player") :
+			collision.collider.hurt(damage)
 		queue_free()
 			
 func _on_Timer_timeout():
