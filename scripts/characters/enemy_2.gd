@@ -17,7 +17,7 @@ func _physics_process(delta):
 	
 	var distance = sqrt(pow((position.x - playerpos.x),2) + pow((position.y - playerpos.y),2))
 		
-	if distance < 1500: 
+	if distance < 1500 :
 		
 		shooting = true
 		if distance > 300 :
@@ -36,5 +36,11 @@ func _physics_process(delta):
 func _on_Timer_timeout():
 	if shooting :
 		var b = bullet.instance()
+		var a = bullet.instance()
+		var c = bullet.instance()
 		b.create(bulletOut.global_position, rotation)
+		a.create(bulletOut.global_position, rotation-370)
+		c.create(bulletOut.global_position, rotation+370)
 		get_parent().add_child(b)
+		get_parent().add_child(a)
+		get_parent().add_child(c)

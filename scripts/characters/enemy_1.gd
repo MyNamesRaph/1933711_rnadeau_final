@@ -17,7 +17,7 @@ func _physics_process(delta):
 	
 	var distance = sqrt(pow((position.x - playerpos.x),2) + pow((position.y - playerpos.y),2))
 		
-	if distance < 1500: 
+	if distance < 1500 : 
 		
 		shooting = true
 		if distance > 300 :

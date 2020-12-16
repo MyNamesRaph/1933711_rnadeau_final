@@ -2,7 +2,7 @@ extends Node
 
 export(Array,PackedScene) var levels
 export var defaultLevel = 0
-var nextLevel = defaultLevel
+var nextLevel
 var currentLevel
 export(PackedScene) var player
 var playerInstance
@@ -10,6 +10,7 @@ var isGameRunning = false
 
 func _ready():
 	playerInstance = player.instance()
+	nextLevel = defaultLevel
 
 func _process(delta):
 	if isGameRunning :
@@ -39,7 +40,7 @@ func loadNext():
 
 #Advance to next level
 func nextLvl():
-	if nextLevel < len(levels)-1 :
+	if nextLevel < len(levels) :
 		remove_child(currentLevel)
 		loadNext()
 	
